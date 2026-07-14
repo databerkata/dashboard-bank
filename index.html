@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bank Mandiri — Enterprise Command Center 2026 · data.berkata</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20200%20200%22%3E%3Crect%20width%3D%22200%22%20height%3D%22200%22%20rx%3D%2246%22%20fill%3D%22%230B1017%22/%3E%3Cpath%20d%3D%22M42%2044%20h116%20a14%2014%200%200%201%2014%2014%20v70%20a14%2014%200%200%201%20-14%2014%20h-66%20l-28%2026%20v-26%20h-22%20a14%2014%200%200%201%20-14%20-14%20v-70%20a14%2014%200%200%201%2014%20-14%20z%22%20fill%3D%22none%22%20stroke%3D%22%23C9A961%22%20stroke-width%3D%2210%22%20stroke-linejoin%3D%22round%22/%3E%3Cg%20stroke%3D%22%23C9A961%22%20stroke-linecap%3D%22round%22%20stroke-width%3D%2212%22%3E%3Cline%20x1%3D%2266%22%20y1%3D%22120%22%20x2%3D%2266%22%20y2%3D%22104%22/%3E%3Cline%20x1%3D%2289%22%20y1%3D%22120%22%20x2%3D%2289%22%20y2%3D%2290%22/%3E%3Cline%20x1%3D%22112%22%20y1%3D%22120%22%20x2%3D%22112%22%20y2%3D%2276%22/%3E%3Cline%20x1%3D%22135%22%20y1%3D%22120%22%20x2%3D%22135%22%20y2%3D%2262%22/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+:root{
+  --navy:#00204A;        /* Mandiri deep navy */
+  --navy2:#002E63;
+  --bg:#01152E;
+  --bg2:#04203F;
+  --panel:#062A50;
+  --panel2:#083A69;
+  --line:rgba(255,255,255,.09);
+  --line2:rgba(253,185,19,.28);
+  --ink:#F2F7FF;
+  --ink2:#9DB6D6;
+  --ink3:#5F7EA6;
+  --gold:#FDB913;        /* Mandiri yellow */
+  --gold2:#FFD466;
+  --sky:#26A9E0;         /* Livin' blue */
+  --aqua:#3FD0C9;
+  --green:#3BC97E;
+  --red:#FF5C6C;
+  --orange:#FF9F43;
+  --violet:#9B7BFF;
+  --r:14px;
+  --shadow:0 1px 2px rgba(0,0,0,.30),0 18px 40px -22px rgba(0,0,0,.75);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:
+    radial-gradient(1200px 620px at 88% -14%, rgba(253,185,19,.13), transparent 60%),
+    radial-gradient(900px 520px at -6% 4%, rgba(38,169,224,.14), transparent 58%),
+    linear-gradient(180deg,#01152E 0%,#01162F 55%,#020F22 100%);
+  background-attachment:fixed;
+  color:var(--ink);
+  font-family:'Manrope','Segoe UI',system-ui,sans-serif;
+  font-size:14px;line-height:1.45;
+  -webkit-font-smoothing:antialiased;
+  padding-bottom:70px;
+}
+.mono{font-family:'JetBrains Mono',ui-monospace,monospace;font-variant-numeric:tabular-nums}
+.disp{font-family:'Space Grotesk',system-ui,sans-serif;letter-spacing:-.3px}
+.wrap{max-width:1580px;margin:0 auto;padding:0 20px}
+::-webkit-scrollbar{width:9px;height:9px}
+::-webkit-scrollbar-thumb{background:#0d3a68;border-radius:8px}
+::-webkit-scrollbar-track{background:transparent}
+
+/* ---------- HEADER ---------- */
+header{position:sticky;top:0;z-index:70;background:linear-gradient(180deg,rgba(1,21,46,.97),rgba(1,21,46,.86));backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.hbar{display:flex;align-items:center;gap:18px;padding:13px 0}
+.logo{display:flex;align-items:center;gap:12px;flex-shrink:0}
+.mark{width:46px;height:46px;border-radius:13px;flex-shrink:0;background:linear-gradient(145deg,#003C7E,#00204A);display:grid;place-items:center;position:relative;overflow:hidden;box-shadow:0 0 0 1px rgba(253,185,19,.35),0 10px 26px -10px rgba(253,185,19,.45)}
+.mark svg{width:28px;height:28px}
+.brand h1{font-family:'Space Grotesk';font-size:17px;font-weight:700;letter-spacing:-.4px;line-height:1.15}
+.brand span{font-size:10px;color:var(--ink3);letter-spacing:1.8px;text-transform:uppercase;font-weight:700}
+.brand span b{color:var(--gold);font-weight:700}
+
+/* signature: transaction pulse */
+.pulse{flex:1;height:50px;min-width:140px;position:relative;overflow:hidden;border-left:1px solid var(--line);border-right:1px solid var(--line);
+  mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
+.pulse canvas{width:100%;height:100%;display:block}
+.pulse .lbl{position:absolute;left:12px;top:5px;font-size:9px;letter-spacing:1.6px;color:var(--ink3);text-transform:uppercase;font-weight:700}
+.pulse .tps{position:absolute;right:12px;top:5px;font-size:11px;color:var(--gold);font-weight:700}
+.pulse .amt{position:absolute;right:12px;bottom:4px;font-size:10.5px;color:var(--ink2)}
+.pulse .amt b{color:var(--ink);font-weight:700}
+
+.hctl{display:flex;align-items:center;gap:8px;flex-shrink:0}
+select,.btn{background:var(--panel);border:1px solid var(--line);color:var(--ink);padding:8px 12px;border-radius:9px;font-size:12.5px;font-family:inherit;cursor:pointer;transition:.18s;font-weight:600}
+select:hover,.btn:hover{border-color:var(--gold);background:var(--panel2)}
+select:focus-visible,.btn:focus-visible,.tab:focus-visible,.rgn:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.live{display:flex;align-items:center;gap:7px;font-size:10.5px;color:var(--gold);background:rgba(253,185,19,.10);border:1px solid rgba(253,185,19,.30);padding:7px 11px;border-radius:9px;font-weight:800;letter-spacing:.8px}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--gold);animation:pulse 1.5s infinite}
+@keyframes pulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(253,185,19,.5)}50%{opacity:.45;box-shadow:0 0 0 7px rgba(253,185,19,0)}}
+.db{display:flex;align-items:center;gap:8px;text-decoration:none;padding:5px 10px 5px 6px;border-radius:10px;border:1px solid var(--line);background:rgba(11,16,23,.55);transition:.18s}
+.db:hover{border-color:#C9A961;background:rgba(11,16,23,.85)}
+.db svg{width:26px;height:26px;flex-shrink:0}
+.db span{font-size:10px;color:var(--ink3);letter-spacing:.6px;line-height:1.2;font-weight:600}
+.db b{display:block;font-size:11.5px;color:#C9A961;letter-spacing:.9px;font-weight:800}
+.flock{display:flex;align-items:center;gap:10px}
+.flock svg{width:150px;height:auto;display:block}
+.clock{font-size:12px;color:var(--ink2);min-width:118px;text-align:right}
+.clock b{color:var(--ink);font-weight:700}
+
+/* ---------- TABS ---------- */
+nav{border-bottom:1px solid var(--line);background:rgba(4,32,63,.55);position:sticky;top:73px;z-index:65;backdrop-filter:blur(10px)}
+.tabs{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{background:none;border:none;border-bottom:2px solid transparent;color:var(--ink3);padding:12px 15px;font-size:12.5px;font-weight:700;cursor:pointer;white-space:nowrap;font-family:inherit;transition:.15s;display:flex;align-items:center;gap:7px}
+.tab:hover{color:var(--ink2)}
+.tab.on{color:var(--gold);border-bottom-color:var(--gold);background:linear-gradient(180deg,transparent,rgba(253,185,19,.10))}
+.tab i{font-style:normal;font-size:10px;opacity:.55;font-family:'JetBrains Mono'}
+
+/* ---------- TICKER ---------- */
+.ticker{display:flex;align-items:center;gap:10px;background:rgba(6,42,80,.6);border-bottom:1px solid var(--line);padding:7px 0;overflow:hidden}
+.ticker .tag{flex-shrink:0;font-size:9px;font-weight:800;letter-spacing:1.4px;color:var(--sky);border:1px solid rgba(38,169,224,.35);background:rgba(38,169,224,.10);padding:3px 8px;border-radius:5px}
+.tk-feed{flex:1;overflow:hidden;position:relative;height:18px}
+.tk-item{position:absolute;inset:0;display:flex;align-items:center;gap:8px;font-size:12px;color:var(--ink2);animation:slideIn .5s ease}
+@keyframes slideIn{from{transform:translateY(15px);opacity:0}to{transform:none;opacity:1}}
+.tk-item b{color:var(--ink);font-weight:700}
+.tk-item .t{color:var(--ink3);font-size:11px;font-family:'JetBrains Mono'}
+.sev{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+
+/* ---------- LAYOUT ---------- */
+main{padding-top:22px}
+.page{display:none;animation:fade .35s ease}
+.page.on{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.sec{display:flex;align-items:baseline;gap:10px;margin:26px 0 12px}
+.sec h2{font-family:'Space Grotesk';font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink)}
+.sec .ln{flex:1;height:1px;background:linear-gradient(90deg,var(--line2),transparent)}
+.sec .note{font-size:11px;color:var(--ink3);font-family:'JetBrains Mono'}
+.grid{display:grid;gap:14px}
+.g4{grid-template-columns:repeat(4,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g2{grid-template-columns:repeat(2,1fr)}
+.g23{grid-template-columns:2fr 1fr}
+.g32{grid-template-columns:1fr 2fr}
+
+/* ---------- CARDS ---------- */
+.card{background:linear-gradient(160deg,rgba(6,42,80,.92),rgba(4,32,63,.86));border:1px solid var(--line);border-radius:var(--r);padding:16px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+.card:before{content:"";position:absolute;left:0;top:0;bottom:0;width:2px;background:linear-gradient(180deg,var(--gold),transparent)}
+.card h3{font-size:11px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;color:var(--ink3);margin-bottom:12px;display:flex;align-items:center;justify-content:space-between;gap:8px}
+.card h3 em{font-style:normal;font-size:10px;color:var(--ink3);font-family:'JetBrains Mono';font-weight:500;letter-spacing:0}
+
+/* KPI */
+.kpi{background:linear-gradient(155deg,rgba(6,42,80,.95),rgba(3,26,52,.9));border:1px solid var(--line);border-radius:var(--r);padding:14px 15px;position:relative;overflow:hidden;transition:.2s;box-shadow:var(--shadow)}
+.kpi:hover{transform:translateY(-2px);border-color:var(--line2)}
+.kpi .k-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.kpi .k-lab{font-size:10.5px;letter-spacing:.9px;text-transform:uppercase;color:var(--ink3);font-weight:800}
+.kpi .k-val{font-family:'Space Grotesk';font-size:25px;font-weight:700;letter-spacing:-1px;margin:7px 0 2px;line-height:1}
+.kpi .k-val small{font-size:13px;color:var(--ink2);font-weight:600;letter-spacing:0}
+.kpi .k-sub{font-size:11px;color:var(--ink3);display:flex;align-items:center;gap:6px;font-family:'JetBrains Mono'}
+.kpi .spark{position:absolute;right:0;bottom:0;width:88px;height:34px;opacity:.55}
+.chg{font-size:10.5px;font-weight:800;padding:2px 6px;border-radius:5px;font-family:'JetBrains Mono'}
+.up{color:var(--green);background:rgba(59,201,126,.12)}
+.dn{color:var(--red);background:rgba(255,92,108,.12)}
+.nu{color:var(--ink3);background:rgba(157,182,214,.10)}
+
+/* charts */
+.cw{position:relative;height:250px}
+.cw.sm{height:190px}
+.cw.lg{height:320px}
+.cw.xl{height:380px}
+
+/* table */
+table{width:100%;border-collapse:collapse;font-size:12.5px}
+th{text-align:left;font-size:9.5px;letter-spacing:1.1px;text-transform:uppercase;color:var(--ink3);font-weight:800;padding:8px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:9px 10px;border-bottom:1px solid rgba(255,255,255,.05);color:var(--ink2)}
+td b{color:var(--ink);font-weight:700}
+tbody tr{transition:.14s;cursor:default}
+tbody tr:hover{background:rgba(253,185,19,.05)}
+.num{text-align:right;font-family:'JetBrains Mono';font-variant-numeric:tabular-nums}
+.pill{display:inline-block;font-size:10px;font-weight:800;padding:2.5px 8px;border-radius:20px;letter-spacing:.4px}
+.p-ok{color:var(--green);background:rgba(59,201,126,.13);border:1px solid rgba(59,201,126,.3)}
+.p-wr{color:var(--orange);background:rgba(255,159,67,.13);border:1px solid rgba(255,159,67,.3)}
+.p-cr{color:var(--red);background:rgba(255,92,108,.13);border:1px solid rgba(255,92,108,.3)}
+.p-in{color:var(--sky);background:rgba(38,169,224,.13);border:1px solid rgba(38,169,224,.3)}
+
+/* bars */
+.bar{height:6px;border-radius:6px;background:rgba(255,255,255,.07);overflow:hidden;min-width:60px}
+.bar i{display:block;height:100%;border-radius:6px;background:linear-gradient(90deg,var(--gold),var(--gold2));transition:width .8s cubic-bezier(.2,.8,.2,1)}
+.bar.b-sky i{background:linear-gradient(90deg,#1B7FB8,var(--sky))}
+.bar.b-red i{background:linear-gradient(90deg,#C43B4A,var(--red))}
+.bar.b-grn i{background:linear-gradient(90deg,#1F9D5F,var(--green))}
+
+/* gauge */
+.gauge{display:flex;flex-direction:column;align-items:center;gap:2px;padding:6px 0}
+.gauge .gv{font-family:'Space Grotesk';font-size:20px;font-weight:700;margin-top:-32px}
+.gauge .gl{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--ink3);font-weight:800;margin-top:6px}
+
+/* region grid */
+.rgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(168px,1fr));gap:10px}
+.rgn{text-align:left;background:rgba(3,26,52,.7);border:1px solid var(--line);border-radius:11px;padding:11px 12px;cursor:pointer;transition:.18s;color:var(--ink);font-family:inherit}
+.rgn:hover{border-color:var(--gold);transform:translateY(-2px);background:rgba(6,42,80,.9)}
+.rgn.on{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold) inset}
+.rgn .rn{font-size:12px;font-weight:800;display:flex;justify-content:space-between;align-items:center;gap:6px}
+.rgn .rc{font-size:10px;color:var(--ink3);font-family:'JetBrains Mono';margin:2px 0 8px}
+.rgn .rv{font-family:'Space Grotesk';font-size:16px;font-weight:700}
+.rgn .rs{font-size:10px;color:var(--ink3);margin-top:4px;display:flex;justify-content:space-between;font-family:'JetBrains Mono'}
+.hd{width:9px;height:9px;border-radius:3px;flex-shrink:0}
+
+/* feed */
+.feed{display:flex;flex-direction:column;gap:8px;max-height:330px;overflow-y:auto;padding-right:4px}
+.fi{display:flex;gap:10px;align-items:flex-start;background:rgba(3,26,52,.6);border:1px solid var(--line);border-left:3px solid var(--sky);border-radius:9px;padding:9px 11px;animation:slideIn .4s ease}
+.fi.w{border-left-color:var(--orange)}
+.fi.c{border-left-color:var(--red)}
+.fi.g{border-left-color:var(--green)}
+.fi .fx{flex:1;min-width:0}
+.fi .ft{font-size:12px;font-weight:700;color:var(--ink)}
+.fi .fd{font-size:11px;color:var(--ink3);margin-top:2px}
+.fi .fm{font-size:10px;color:var(--ink3);font-family:'JetBrains Mono';white-space:nowrap}
+
+/* legend + misc */
+.lg{display:flex;flex-wrap:wrap;gap:12px;margin-top:10px;font-size:11px;color:var(--ink3)}
+.lg span{display:flex;align-items:center;gap:6px}
+.lg i{width:9px;height:9px;border-radius:3px;display:block}
+.stat{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.05);font-size:12.5px}
+.stat:last-child{border-bottom:none}
+.stat span{color:var(--ink3)}
+.stat b{font-family:'JetBrains Mono';color:var(--ink);font-weight:700}
+.mini{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.mbox{background:rgba(3,26,52,.6);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.mbox .ml{font-size:10px;letter-spacing:.8px;text-transform:uppercase;color:var(--ink3);font-weight:800}
+.mbox .mv{font-family:'Space Grotesk';font-size:18px;font-weight:700;margin-top:3px}
+
+/* drawer */
+.ovl{position:fixed;inset:0;background:rgba(1,10,22,.72);backdrop-filter:blur(4px);z-index:90;display:none}
+.ovl.on{display:block}
+.drw{position:fixed;top:0;right:0;bottom:0;width:min(480px,92vw);background:linear-gradient(180deg,#062A50,#031B34);border-left:1px solid var(--line2);z-index:95;transform:translateX(100%);transition:transform .3s cubic-bezier(.2,.8,.2,1);overflow-y:auto;padding:20px}
+.drw.on{transform:none}
+.drw h4{font-family:'Space Grotesk';font-size:18px;font-weight:700;margin-bottom:2px}
+.drw .dsub{font-size:11px;color:var(--ink3);font-family:'JetBrains Mono';margin-bottom:16px}
+.drw .x{position:absolute;right:16px;top:16px;background:none;border:1px solid var(--line);color:var(--ink2);width:30px;height:30px;border-radius:8px;cursor:pointer;font-size:15px}
+.drw .x:hover{border-color:var(--gold);color:var(--gold)}
+
+footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);font-size:11px;color:var(--ink3);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-family:'JetBrains Mono'}
+
+@media(max-width:1200px){.g4{grid-template-columns:repeat(2,1fr)}.g3,.g23,.g32{grid-template-columns:1fr}.pulse{display:none}}
+@media(max-width:760px){.g4,.g2{grid-template-columns:1fr}.hbar{flex-wrap:wrap;gap:10px}.clock{display:none}.kpi .k-val{font-size:22px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap hbar">
+    <div class="logo">
+      <div class="mark">
+        <svg viewBox="0 0 32 32" fill="none"><path d="M4 24V12l7 6.2L18 8v16" stroke="#FDB913" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 24V14l6 5" stroke="#26A9E0" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="brand">
+        <h1>Bank Mandiri</h1>
+        <span>Enterprise <b>Command Center</b> · by data.berkata</span>
+      </div>
+    </div>
+
+    <div class="pulse">
+      <span class="lbl">Transaction Pulse — Livin' · Kopra · ATM · EDC · QRIS</span>
+      <span class="tps mono" id="tps">— TPS</span>
+      <span class="amt mono">Nilai transaksi hari ini <b id="todayVal">—</b></span>
+      <canvas id="pulseC"></canvas>
+    </div>
+
+    <div class="hctl">
+      <select id="selRegion" aria-label="Filter wilayah"></select>
+      <select id="selPeriod" aria-label="Periode">
+        <option value="ytd">YTD Jun 2026</option>
+        <option value="q2">Q2 2026</option>
+        <option value="mtd">MTD Jul 2026</option>
+      </select>
+      <a class="db" href="https://databerkata.github.io" target="_blank" rel="noopener" title="Dashboard oleh data.berkata"><svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="200" height="200" rx="46" fill="#0B1017"/><path d="M42 44 h116 a14 14 0 0 1 14 14 v70 a14 14 0 0 1 -14 14 h-66 l-28 26 v-26 h-22 a14 14 0 0 1 -14 -14 v-70 a14 14 0 0 1 14 -14 z" fill="none" stroke="#C9A961" stroke-width="9" stroke-linejoin="round"/><g stroke-linecap="round" stroke-width="11"><line x1="66" y1="120" x2="66" y2="104" stroke="#8C8577"/><line x1="89" y1="120" x2="89" y2="90" stroke="#1D9E75"/><line x1="112" y1="120" x2="112" y2="76" stroke="#C9A961"/><line x1="135" y1="120" x2="135" y2="62" stroke="#EBD79C"/></g></svg><span>dashboard by<b>DATA BERKATA</b></span></a>
+      <div class="live"><span class="dot"></span>LIVE</div>
+      <div class="clock mono" id="clock">—</div>
+    </div>
+  </div>
+  <nav><div class="wrap"><div class="tabs" id="tabs"></div></div></nav>
+  <div class="ticker">
+    <div class="wrap" style="display:flex;align-items:center;gap:12px;width:100%">
+      <span class="tag">EVENT FEED</span>
+      <div class="tk-feed" id="ticker"></div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- 1. RINGKASAN -->
+  <section class="page on" id="p-ringkasan">
+    <div class="sec"><h2>Ringkasan Eksekutif</h2><div class="ln"></div><span class="note" id="noteScope">—</span></div>
+    <div class="grid g4" id="kpiMain"></div>
+
+    <div class="grid g23" style="margin-top:14px">
+      <div class="card">
+        <h3>Neraca &amp; Laba <em>Rp triliun · 2021–2026F</em></h3>
+        <div class="cw lg"><canvas id="cBalance"></canvas></div>
+      </div>
+      <div class="card">
+        <h3>Komposisi Pendapatan <em>YTD</em></h3>
+        <div class="cw"><canvas id="cRev"></canvas></div>
+        <div class="mini" style="margin-top:12px">
+          <div class="mbox"><div class="ml">NII</div><div class="mv">Rp 51,8 T</div></div>
+          <div class="mbox"><div class="ml">Fee-based</div><div class="mv">Rp 20,4 T</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid g2" style="margin-top:14px">
+      <div class="card">
+        <h3>Posisi Kompetitif vs Bank Buku IV <em>skor ternormalisasi</em></h3>
+        <div class="cw lg"><canvas id="cPeer"></canvas></div>
+      </div>
+      <div class="card">
+        <h3>Kesehatan Bank — Ambang Regulator <em>OJK / Basel III</em></h3>
+        <div id="healthRows"></div>
+      </div>
+    </div>
+
+    <div class="sec"><h2>Denyut Operasional Hari Ini</h2><div class="ln"></div><span class="note">refresh 2 detik</span></div>
+    <div class="grid g4" id="opsLive"></div>
+  </section>
+
+  <!-- 2. KREDIT -->
+  <section class="page" id="p-kredit">
+    <div class="sec"><h2>Portofolio Kredit &amp; Kualitas Aset</h2><div class="ln"></div><span class="note">Outstanding bank only + subsidiaries</span></div>
+    <div class="grid g4" id="kpiKredit"></div>
+
+    <div class="grid g23" style="margin-top:14px">
+      <div class="card">
+        <h3>Pertumbuhan Kredit per Segmen <em>Rp triliun</em></h3>
+        <div class="cw lg"><canvas id="cSeg"></canvas></div>
+      </div>
+      <div class="card">
+        <h3>NPL &amp; LAR per Segmen <em>%</em></h3>
+        <div class="cw lg"><canvas id="cNpl"></canvas></div>
+      </div>
+    </div>
+
+    <div class="grid g2" style="margin-top:14px">
+      <div class="card">
+        <h3>Eksposur Sektor Ekonomi <em>10 besar · Rp triliun</em></h3>
+        <div class="cw lg"><canvas id="cSector"></canvas></div>
+      </div>
+      <div class="card">
+        <h3>Watchlist Debitur Korporasi <em>klik baris untuk detail</em></h3>
+        <div style="max-height:330px;overflow:auto"><table id="tWatch"><thead><tr><th>Debitur</th><th>Sektor</th><th class="num">Eksposur</th><th class="num">Kolek</th><th>Status</th></tr></thead><tbody></tbody></table></div>
+      </div>
+    </div>
+
+    <div class="grid g3" style="margin-top:14px">
+      <div class="card"><h3>Cost of Credit <em>%, disetahunkan</em></h3><div class="cw sm"><canvas id="cCoc"></canvas></div></div>
+      <div class="card"><h3>Coverage Ratio CKPN <em>%</em></h3><div class="cw sm"><canvas id="cCov"></canvas></div></div>
+      <div class="card"><h3>Restrukturisasi &amp; Loan at Risk <em>Rp T</em></h3><div class="cw sm"><canvas id="cRes"></canvas></div></div>
+    </div>
+  </section>
+
+  <!-- 3. PENDANAAN -->
+  <section class="page" id="p-pendanaan">
+    <div class="sec"><h2>Pendanaan &amp; Likuiditas</h2><div class="ln"></div><span class="note">DPK · CASA · rasio likuiditas</span></div>
+    <div class="grid g4" id="kpiFund"></div>
+
+    <div class="grid g23" style="margin-top:14px">
+      <div class="card">
+        <h3>Struktur DPK <em>Rp triliun · giro · tabungan · deposito</em></h3>
+        <div class="cw lg"><canvas id="cDpk"></canvas></div>
+      </div>
+      <div class="card">
+        <h3>Cost of Fund vs BI-Rate <em>%</em></h3>
+        <div class="cw lg"><canvas id="cCof"></canvas></div>
+      </div>
+    </div>
+
+    <div class="grid g4" style="margin-top:14px">
+      <div class="card"><h3>LDR</h3><div class="cw sm"><canvas id="gLdr"></canvas></div></div>
+      <div class="card"><h3>LCR</h3><div class="cw sm"><canvas id="gLcr"></canvas></div></div>
+      <div class="card"><h3>NSFR</h3><div class="cw sm"><canvas id="gNsfr"></canvas></div></div>
+      <div class="card"><h3>CASA Ratio</h3><div class="cw sm"><canvas id="gCasa"></canvas></div></div>
+    </div>
+
+    <div class="grid g2" style="margin-top:14px">
+      <div class="card"><h3>Konsentrasi Deposan <em>25 deposan inti</em></h3><div class="cw"><canvas id="cConc"></canvas></div></div>
+      <div class="card"><h3>Profil Jatuh Tempo Pendanaan <em>Rp triliun</em></h3><div class="cw"><canvas id="cMat"></canvas></div></div>
+    </div>
+  </section>
+
+  <!-- 4. PROFITABILITAS -->
+  <section class="page" id="p-profit">
+    <div class="sec"><h2>Profitabilitas &amp; Efisiensi</h2><div class="ln"></div><span class="note">Konsolidasi · YTD</span></div>
+    <div class="grid g4" id="kpiProfit"></div>
+
+    <div class="grid g23" style="margin-top:14px">
+      <div class="card">
+        <h3>Jembatan Laba <em>dari pendapatan bunga ke laba bersih · Rp T</em></h3>
+        <div class="cw lg"><canvas id="cWaterfall"></canvas></div>
+      </div>
+      <div class="card">
+        <h3>NIM &amp; BOPO <em>tren 8 kuartal</em></h3>
+        <div class="cw lg"><canvas id="cNim"></canvas></div>
+      </div>
+    </div>
+
+    <div class="grid g2" style="margin-top:14px">
+      <div class="card"><h3>Pendapatan Fee-Based <em>Rp triliun</em></h3><div class="cw"><canvas id="cFee"></canvas></div></div>
+      <div class="card"><h3>Kontribusi Anak Perusahaan <em>laba bersih · Rp miliar</em></h3><div style="max-height:300px;overflow:auto"><table id="tSubs"><thead><tr><th>Entitas</th><th>Lini Bisnis</th><th class="num">Laba YTD</th><th class="num">YoY</th><th>Kontribusi</th></tr></thead><tbody></tbody></table></div></div>
+    </div>
+  </section>
+
+  <!-- 5. DIGITAL -->
+  <section class="page" id="p-digital">
+    <div class="sec"><h2>Digital Banking — Livin' &amp; Kopra</h2><div class="ln"></div><span class="note">telemetri platform</span></div>
+    <div class="grid g4" id="kpiDigital"></div>
+
+    <div class="grid g23" style="margin-top:14px">
+      <div class="card">
+        <h3>Throughput Real-Time <em>transaksi per detik · 60 detik terakhir</em></h3>
+        <div class="cw lg"><canvas id="cTps"></canvas></div>
+      </div>
+      <div class="card">
+        <h3>Kesehatan Platform <em>SLA · latency · error rate</em></h3>
+        <div id="slaRows"></div>
+      </div>
+    </div>
+
+    <div class="grid g3" style="margin-top:14px">
+      <div class="card"><h3>Pengguna Livin' <em>juta · MAU vs registered</em></h3><div class="cw"><canvas id="cLivin"></canvas></div></div>
+      <div class="card"><h3>Mix Channel Transaksi <em>volume</em></h3><div class="cw"><canvas id="cChan"></canvas></div></div>
+      <div class="card"><h3>Fitur Terpopuler Livin' <em>share volume</em></h3><div class="cw"><canvas id="cFeat"></canvas></div></div>
+    </div>
+
+    <div class="card" style="margin-top:14px">
+      <h3>Kopra by Mandiri — Wholesale Digital <em>nilai transaksi · Rp ribu triliun</em></h3>
+      <div class="cw"><canvas id="cKopra"></canvas></div>
+    </div>
+  </section>
+
+  <!-- 6. JARINGAN -->
+  <section class="page" id="p-jaringan">
+    <div class="sec"><h2>Jaringan &amp; Kinerja Wilayah</h2><div class="ln"></div><span class="note">klik kartu wilayah untuk drill-down</span></div>
+    <div class="grid g4" id="kpiNet"></div>
+
+    <div class="card" style="margin-top:14px">
+      <h3>12 Region Bank Mandiri <em>warna = pencapaian target kredit YTD</em></h3>
+      <div class="rgrid" id="regionGrid"></div>
+      <div class="lg">
+        <span><i style="background:var(--green)"></i>≥ 100% target</span>
+        <span><i style="background:var(--gold)"></i>90–99%</span>
+        <span><i style="background:var(--orange)"></i>80–89%</span>
+        <span><i style="background:var(--red)"></i>&lt; 80%</span>
+      </div>
+    </div>
+
+    <div class="grid g2" style="margin-top:14px">
+      <div class="card"><h3>Kredit vs DPK per Region <em>Rp triliun</em></h3><div class="cw lg"><canvas id="cRegion"></canvas></div></div>
+      <div class="card"><h3>Titik Layanan <em>cabang · ATM · agen · EDC</em></h3><div class="cw lg"><canvas id="cTouch"></canvas></div></div>
+    </div>
+  </section>
+
+  <!-- 7. TREASURY -->
+  <section class="page" id="p-treasury">
+    <div class="sec"><h2>Treasury &amp; Pasar Modal</h2><div class="ln"></div><span class="note">harga simulasi · delay feed</span></div>
+    <div class="grid g4" id="kpiTre"></div>
+
+    <div class="grid g23" style="margin-top:14px">
+      <div class="card"><h3>BMRI — Pergerakan Harga Intraday <em>IDX · simulasi tick</em></h3><div class="cw lg"><canvas id="cStock"></canvas></div></div>
+      <div class="card"><h3>Papan Kurs &amp; Suku Bunga <em>update 3 detik</em></h3><div id="fxBoard"></div></div>
+    </div>
+
+    <div class="grid g3" style="margin-top:14px">
+      <div class="card"><h3>Kurva Imbal Hasil SBN <em>%</em></h3><div class="cw"><canvas id="cYield"></canvas></div></div>
+      <div class="card"><h3>Portofolio Surat Berharga <em>Rp T</em></h3><div class="cw"><canvas id="cSec"></canvas></div></div>
+      <div class="card"><h3>Sensitivitas NII terhadap BI-Rate <em>Rp T · 12 bulan</em></h3><div class="cw"><canvas id="cSens"></canvas></div></div>
+    </div>
+  </section>
+
+  <!-- 8. RISIKO -->
+  <section class="page" id="p-risiko">
+    <div class="sec"><h2>Risiko, Fraud &amp; Kepatuhan</h2><div class="ln"></div><span class="note">SOC + AML feed</span></div>
+    <div class="grid g4" id="kpiRisk"></div>
+
+    <div class="grid g32" style="margin-top:14px">
+      <div class="card">
+        <h3>Fraud &amp; Security Feed <em>langsung dari SOC</em></h3>
+        <div class="feed" id="fraudFeed"></div>
+      </div>
+      <div class="card">
+        <h3>Peta Panas Risiko Operasional <em>frekuensi × dampak</em></h3>
+        <div class="cw lg"><canvas id="cRisk"></canvas></div>
+      </div>
+    </div>
+
+    <div class="grid g3" style="margin-top:14px">
+      <div class="card"><h3>Corong Kasus AML <em>jumlah kasus</em></h3><div class="cw"><canvas id="cAml"></canvas></div></div>
+      <div class="card"><h3>Insiden Fraud per Kanal <em>YTD</em></h3><div class="cw"><canvas id="cFraudCh"></canvas></div></div>
+      <div class="card"><h3>Skor Kepatuhan <em>per pilar</em></h3><div class="cw"><canvas id="cComp"></canvas></div></div>
+    </div>
+  </section>
+
+  <footer>
+    <span class="flock"><svg viewBox="0 0 700 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="data berkata"><g transform="translate(38,20) scale(0.63)"><path d="M42 44 h116 a14 14 0 0 1 14 14 v70 a14 14 0 0 1 -14 14 h-66 l-28 26 v-26 h-22 a14 14 0 0 1 -14 -14 v-70 a14 14 0 0 1 14 -14 z" fill="none" stroke="#C9A961" stroke-width="9" stroke-linejoin="round"/><g stroke-linecap="round" stroke-width="11"><line x1="66" y1="120" x2="66" y2="104" stroke="#8C8577"/><line x1="89" y1="120" x2="89" y2="90" stroke="#1D9E75"/><line x1="112" y1="120" x2="112" y2="76" stroke="#C9A961"/><line x1="135" y1="120" x2="135" y2="62" stroke="#EBD79C"/></g></g><text x="180" y="72" font-family="Space Grotesk, Poppins, Arial, sans-serif" font-size="33" font-weight="700" letter-spacing="4.5" fill="#EDF2F8">DATA</text><text x="180" y="110" font-family="Space Grotesk, Poppins, Arial, sans-serif" font-size="33" font-weight="700" letter-spacing="4.5" fill="#C9A961">BERKATA</text><line x1="182" y1="125" x2="472" y2="125" stroke="#3A4757" stroke-width="1"/><text x="182" y="145" font-family="Manrope, Poppins, Arial, sans-serif" font-size="10" letter-spacing="4" fill="#94A3B8">INTERACTIVE BUSINESS DASHBOARDS</text></svg></span>
+    <span id="footStamp">—</span>
+    <span>Bank Mandiri Enterprise Command Center · angka simulasi berbasis rilis publik FY2025 — bukan data internal bank</span>
+  </footer>
+</main>
+
+<div class="ovl" id="ovl"></div>
+<aside class="drw" id="drw" aria-hidden="true">
+  <button class="x" id="drwX" aria-label="Tutup">×</button>
+  <h4 id="drwT">—</h4>
+  <div class="dsub" id="drwS">—</div>
+  <div id="drwB"></div>
+</aside>
+<script>
+/* ============ SETUP ============ */
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const C={gold:'#FDB913',gold2:'#FFD466',sky:'#26A9E0',aqua:'#3FD0C9',green:'#3BC97E',red:'#FF5C6C',orange:'#FF9F43',violet:'#9B7BFF',ink:'#F2F7FF',ink2:'#9DB6D6',ink3:'#5F7EA6',navy:'#002E63',line:'rgba(255,255,255,.07)'};
+Chart.defaults.color=C.ink3;
+Chart.defaults.font.family="'Manrope',sans-serif";
+Chart.defaults.font.size=11;
+Chart.defaults.plugins.legend.labels.boxWidth=9;
+Chart.defaults.plugins.legend.labels.boxHeight=9;
+Chart.defaults.plugins.legend.labels.usePointStyle=true;
+Chart.defaults.plugins.legend.labels.padding=14;
+Chart.defaults.plugins.tooltip.backgroundColor='rgba(3,22,45,.96)';
+Chart.defaults.plugins.tooltip.borderColor='rgba(253,185,19,.35)';
+Chart.defaults.plugins.tooltip.borderWidth=1;
+Chart.defaults.plugins.tooltip.padding=10;
+Chart.defaults.plugins.tooltip.titleFont={weight:'700',size:12};
+Chart.defaults.plugins.tooltip.cornerRadius=8;
+Chart.defaults.maintainAspectRatio=false;
+const GRID={grid:{color:C.line,drawTicks:false},border:{display:false},ticks:{padding:8}};
+const fmt=(n,d=1)=>n.toLocaleString('id-ID',{minimumFractionDigits:d,maximumFractionDigits:d});
+const rp=n=>'Rp '+fmt(n,1)+' T';
+const rnd=(a,b)=>a+Math.random()*(b-a);
+
+const charts={};
+function mk(id,cfg){ if(charts[id]) charts[id].destroy(); const el=$('#'+id); if(!el) return; charts[id]=new Chart(el,cfg); }
+
+/* ============ DATA ============ */
+const REGIONS=[
+ {id:'ALL',n:'Konsolidasi Nasional',c:'NAT',kredit:1815,dpk:1812,npl:1.02,ach:101,cab:2386,atm:12740,agen:412000},
+ {id:'R1',n:'Region I — Sumatera 1',c:'MDN',kredit:118,dpk:104,npl:1.35,ach:96,cab:214,atm:1080,agen:38200},
+ {id:'R2',n:'Region II — Sumatera 2',c:'PLM',kredit:96,dpk:88,npl:1.48,ach:88,cab:181,atm:905,agen:31400},
+ {id:'R3',n:'Region III — Jakarta 1',c:'JKT1',kredit:284,dpk:342,npl:0.72,ach:107,cab:196,atm:1460,agen:29800},
+ {id:'R4',n:'Region IV — Jakarta 2',c:'JKT2',kredit:262,dpk:311,npl:0.81,ach:104,cab:188,atm:1385,agen:27600},
+ {id:'R5',n:'Region V — Jakarta 3',c:'JKT3',kredit:238,dpk:276,npl:0.94,ach:99,cab:174,atm:1290,agen:26100},
+ {id:'R6',n:'Region VI — Jawa 1',c:'BDG',kredit:152,dpk:138,npl:1.12,ach:98,cab:236,atm:1210,agen:45800},
+ {id:'R7',n:'Region VII — Jawa 2',c:'SMG',kredit:128,dpk:121,npl:1.21,ach:93,cab:224,atm:1105,agen:43100},
+ {id:'R8',n:'Region VIII — Jawa 3',c:'SBY',kredit:171,dpk:158,npl:1.05,ach:102,cab:248,atm:1320,agen:47500},
+ {id:'R9',n:'Region IX — Kalimantan',c:'BPP',kredit:104,dpk:96,npl:1.28,ach:91,cab:152,atm:806,agen:28900},
+ {id:'R10',n:'Region X — Sulawesi & Maluku',c:'MKS',kredit:98,dpk:91,npl:1.44,ach:86,cab:168,atm:842,agen:32700},
+ {id:'R11',n:'Region XI — Bali & Nusa Tenggara',c:'DPS',kredit:86,dpk:104,npl:1.18,ach:105,cab:142,atm:788,agen:34600},
+ {id:'R12',n:'Region XII — Papua',c:'JYP',kredit:78,dpk:83,npl:1.62,ach:79,cab:63,atm:549,agen:26300}
+];
+const state={region:'ALL',period:'ytd',tps:[],pulse:[],todayVal:0,stock:[],px:6425};
+
+const SEGMENTS=[
+ {n:'Korporasi',v:642,npl:0.68,lar:5.1,c:C.gold},
+ {n:'Komersial',v:312,npl:1.42,lar:9.8,c:C.sky},
+ {n:'SME',v:104,npl:1.86,lar:11.2,c:C.aqua},
+ {n:'Mikro',v:198,npl:1.24,lar:7.4,c:C.green},
+ {n:'Konsumer',v:141,npl:1.08,lar:4.2,c:C.violet},
+ {n:'Anak Usaha',v:418,npl:1.31,lar:6.6,c:C.orange}
+];
+const SECTORS=[['Industri Pengolahan',268],['Perdagangan',214],['Jasa Keuangan',162],['Pertambangan',148],['Konstruksi',126],['Energi & Listrik',118],['Perkebunan & Agri',104],['Transportasi',86],['Telekomunikasi',72],['Properti',68]];
+const WATCH=[
+ ['PT Nusantara Steelworks','Industri Pengolahan',4.2,'2','Watchlist','p-wr'],
+ ['PT Garuda Prima Energi','Pertambangan',3.8,'1','Lancar','p-ok'],
+ ['PT Cakrawala Infratama','Konstruksi',3.1,'3','Restrukturisasi','p-cr'],
+ ['PT Sawit Lestari Group','Perkebunan',2.9,'1','Lancar','p-ok'],
+ ['PT Bahari Logistik Nusa','Transportasi',2.4,'2','Watchlist','p-wr'],
+ ['PT Meranti Mineral','Pertambangan',2.2,'1','Lancar','p-ok'],
+ ['PT Grha Properti Utama','Properti',1.9,'4','Diragukan','p-cr'],
+ ['PT Telekom Data Sentra','Telekomunikasi',1.7,'1','Lancar','p-ok'],
+ ['PT Agro Pangan Sejahtera','Agri',1.5,'2','Watchlist','p-wr'],
+ ['PT Kimia Sentosa','Industri Pengolahan',1.3,'1','Lancar','p-ok']
+];
+const SUBS=[
+ ['Bank Syariah Indonesia','Perbankan syariah',4820,18.4,88],
+ ['Mandiri Taspen','Perbankan pensiunan',1180,11.2,52],
+ ['Mandiri Tunas Finance','Pembiayaan otomotif',960,9.6,44],
+ ['AXA Mandiri Financial','Asuransi jiwa',742,6.8,34],
+ ['Mandiri Sekuritas','Pasar modal',418,22.1,19],
+ ['Mandiri Utama Finance','Multifinance',286,14.3,13],
+ ['Mandiri Capital Indonesia','Ventura digital',96,-8.4,4],
+ ['Mandiri International Remit','Remitansi',54,4.2,2]
+];
+const SLA=[
+ ['Livin\' by Mandiri','Mobile banking',99.97,142,0.03],
+ ['Kopra Portal','Wholesale',99.94,186,0.06],
+ ['Core Banking','Transaksi inti',99.99,38,0.01],
+ ['Switching ATM','Jaringan ATM',99.91,96,0.09],
+ ['QRIS Gateway','Pembayaran',99.96,74,0.04],
+ ['API Open Banking','Partner & fintech',99.88,118,0.12]
+];
+const FRAUD=[
+ ['Anomali login Livin\'','142 percobaan dari IP asing diblokir otomatis','c'],
+ ['Social engineering terdeteksi','Nasabah Region III dicegah transfer Rp 84 jt','w'],
+ ['Skimming ATM','Perangkat asing ditemukan — ATM Bekasi dinonaktifkan','c'],
+ ['Kartu kredit fraud','Pola CNP tidak wajar, 8 kartu diblokir sementara','w'],
+ ['Transaksi mencurigakan','STR diajukan ke PPATK — nilai Rp 2,1 M','w'],
+ ['Phishing domain','Domain tiruan livin-mandiri.id di-takedown','g'],
+ ['Percobaan DDoS','Trafik 82 Gbps ditangkis di edge, layanan normal','g'],
+ ['Verifikasi biometrik gagal','Rangkaian 27 percobaan wajah palsu ditolak','w']
+];
+const TICKS=[
+ ['Kredit korporasi cair','Rp 1,2 T ke sektor energi — Region III','var(--green)'],
+ ['Livin\' melewati puncak','4.180 TPS pada 12:04 WIB, headroom 61%','var(--sky)'],
+ ['Deposito besar masuk','Rp 850 M dari nasabah institusi — Region IV','var(--green)'],
+ ['NPL Region XII naik','1,62% (+8 bps MoM) — review portofolio dijadwalkan','var(--orange)'],
+ ['Lelang SBN','Bank memenangkan FR0104 senilai Rp 1,8 T','var(--sky)'],
+ ['Kopra onboarding','34 nasabah wholesale baru aktif hari ini','var(--green)'],
+ ['Kurs USD/IDR bergerak','Dealing room menyesuaikan posisi net open','var(--orange)'],
+ ['Cabang offline','Cabang Sorong terputus 6 menit — link cadangan aktif','var(--red)'],
+ ['ATM kehabisan uang','12 ATM Region VI masuk antrean pengisian','var(--orange)'],
+ ['Penyaluran KUR','Rp 640 M tersalur ke 4.812 debitur mikro','var(--green)']
+];
+
+/* ============ HEADER ============ */
+const selR=$('#selRegion');
+REGIONS.forEach(r=>{const o=document.createElement('option');o.value=r.id;o.textContent=r.id==='ALL'?'Semua Region':r.c+' · '+r.n.split('—')[1].trim();selR.appendChild(o)});
+selR.onchange=e=>{state.region=e.target.value;renderAll()};
+$('#selPeriod').onchange=e=>{state.period=e.target.value;renderAll()};
+
+function clock(){
+  const d=new Date(), wib=new Date(d.getTime()+(7*60+d.getTimezoneOffset())*60000);
+  const p=n=>String(n).padStart(2,'0');
+  $('#clock').innerHTML=`<b>${p(wib.getHours())}:${p(wib.getMinutes())}:${p(wib.getSeconds())}</b> WIB`;
+  $('#footStamp').textContent='Snapshot '+wib.toLocaleString('id-ID')+' WIB';
+}
+setInterval(clock,1000);clock();
+
+/* signature: transaction pulse canvas */
+const pc=$('#pulseC'), px=pc.getContext('2d');
+for(let i=0;i<180;i++) state.pulse.push(rnd(.35,.65));
+function drawPulse(){
+  const w=pc.clientWidth||600,h=pc.clientHeight||50,dpr=devicePixelRatio||1;
+  pc.width=w*dpr;pc.height=h*dpr;px.setTransform(dpr,0,0,dpr,0,0);
+  px.clearRect(0,0,w,h);
+  const n=state.pulse.length, step=w/(n-1);
+  const g=px.createLinearGradient(0,0,0,h);
+  g.addColorStop(0,'rgba(253,185,19,.30)');g.addColorStop(1,'rgba(253,185,19,0)');
+  px.beginPath();px.moveTo(0,h);
+  state.pulse.forEach((v,i)=>px.lineTo(i*step,h-v*h*.82-4));
+  px.lineTo(w,h);px.closePath();px.fillStyle=g;px.fill();
+  px.beginPath();
+  state.pulse.forEach((v,i)=>{const y=h-v*h*.82-4;i?px.lineTo(i*step,y):px.moveTo(0,y)});
+  px.strokeStyle=C.gold;px.lineWidth=1.6;px.shadowColor='rgba(253,185,19,.6)';px.shadowBlur=6;px.stroke();px.shadowBlur=0;
+  const last=state.pulse[n-1];
+  px.beginPath();px.arc(w-1,h-last*h*.82-4,2.6,0,7);px.fillStyle=C.gold2;px.fill();
+}
+function tickPulse(){
+  const base=.45+.18*Math.sin(Date.now()/9000);
+  let v=base+rnd(-.08,.08);
+  if(Math.random()<.06) v+=rnd(.18,.35);          // burst
+  state.pulse.push(Math.max(.12,Math.min(1,v)));
+  if(state.pulse.length>180) state.pulse.shift();
+  const tps=Math.round(2400+v*2600);
+  state.tps.push(tps); if(state.tps.length>60) state.tps.shift();
+  state.todayVal+=tps*rnd(.9,1.4)*0.00042;        // Rp triliun akumulatif
+  $('#tps').textContent=tps.toLocaleString('id-ID')+' TPS';
+  $('#todayVal').textContent='Rp '+fmt(state.todayVal,1)+' T';
+  drawPulse();
+  if(charts.cTps){charts.cTps.data.labels=state.tps.map((_,i)=>i);charts.cTps.data.datasets[0].data=state.tps;charts.cTps.update('none')}
+}
+state.todayVal=1284.6;
+setInterval(tickPulse,700);tickPulse();
+addEventListener('resize',()=>drawPulse());
+
+/* ticker */
+let ti=0;
+function pushTick(){
+  const [t,d,c]=TICKS[ti++%TICKS.length];
+  const el=document.createElement('div');el.className='tk-item';
+  const now=new Date();const p=n=>String(n).padStart(2,'0');
+  el.innerHTML=`<span class="sev" style="background:${c}"></span><b>${t}</b><span>${d}</span><span class="t">${p(now.getHours())}:${p(now.getMinutes())}:${p(now.getSeconds())}</span>`;
+  $('#ticker').innerHTML='';$('#ticker').appendChild(el);
+}
+pushTick();setInterval(pushTick,4200);
+
+/* tabs */
+const TABS=[['ringkasan','Ringkasan','01'],['kredit','Kredit & Aset','02'],['pendanaan','Pendanaan','03'],['profit','Profitabilitas','04'],['digital','Digital','05'],['jaringan','Jaringan','06'],['treasury','Treasury','07'],['risiko','Risiko','08']];
+$('#tabs').innerHTML=TABS.map((t,i)=>`<button class="tab ${i===0?'on':''}" data-t="${t[0]}"><i>${t[2]}</i>${t[1]}</button>`).join('');
+$$('.tab').forEach(b=>b.onclick=()=>{
+  $$('.tab').forEach(x=>x.classList.remove('on'));b.classList.add('on');
+  $$('.page').forEach(p=>p.classList.remove('on'));$('#p-'+b.dataset.t).classList.add('on');
+  renderPage(b.dataset.t);
+  scrollTo({top:0,behavior:'smooth'});
+});
+
+/* ============ HELPERS ============ */
+function sparkline(up=true,seed=1){
+  const pts=[];let v=50;
+  for(let i=0;i<16;i++){v+=(Math.sin(i*seed)*6)+(up?2.4:-2.4)+rnd(-4,4);pts.push(Math.max(6,Math.min(94,v)))}
+  const d=pts.map((p,i)=>`${(i/15*88).toFixed(1)},${(34-p/100*30).toFixed(1)}`).join(' ');
+  const col=up?C.green:C.red;
+  return `<svg class="spark" viewBox="0 0 88 34" preserveAspectRatio="none"><polyline points="${d}" fill="none" stroke="${col}" stroke-width="1.6"/></svg>`;
+}
+function kpiCard(o){
+  const cls=o.chg==null?'nu':(o.chg>0?(o.inv?'dn':'up'):(o.inv?'up':'dn'));
+  const sign=o.chg==null?'':(o.chg>0?'▲ +':'▼ ');
+  return `<div class="kpi">
+    <div class="k-top"><span class="k-lab">${o.lab}</span>${o.chg==null?'':`<span class="chg ${cls}">${sign}${fmt(Math.abs(o.chg),o.chg%1?1:0)}${o.unit||'%'}</span>`}</div>
+    <div class="k-val disp">${o.val}${o.small?` <small>${o.small}</small>`:''}</div>
+    <div class="k-sub">${o.sub}</div>
+    ${sparkline(o.chg==null?true:(o.inv?o.chg<0:o.chg>0),o.seed||1)}
+  </div>`;
+}
+function R(){ return REGIONS.find(r=>r.id===state.region)||REGIONS[0] }
+function pf(){ return state.period==='ytd'?1:state.period==='q2'?0.52:0.17 }  // faktor periode
+function hcol(a){ return a>=100?C.green:a>=90?C.gold:a>=80?C.orange:C.red }
+
+/* drawer */
+function openDrawer(title,sub,html){
+  $('#drwT').textContent=title;$('#drwS').textContent=sub;$('#drwB').innerHTML=html;
+  $('#drw').classList.add('on');$('#ovl').classList.add('on');$('#drw').setAttribute('aria-hidden','false');
+}
+function closeDrawer(){$('#drw').classList.remove('on');$('#ovl').classList.remove('on');$('#drw').setAttribute('aria-hidden','true')}
+$('#drwX').onclick=closeDrawer;$('#ovl').onclick=closeDrawer;
+addEventListener('keydown',e=>{if(e.key==='Escape')closeDrawer()});
+</script>
+<script>
+/* ============ 1. RINGKASAN ============ */
+function renderRingkasan(){
+  const r=R(),f=pf(),nat=r.id==='ALL';
+  const laba=nat?30.4*f/1:30.4*f*(r.kredit/1815)*1.06;
+  $('#noteScope').textContent=r.c+' · '+($('#selPeriod').selectedOptions[0].textContent);
+  $('#kpiMain').innerHTML=[
+    {lab:'Total Aset',val:rp(nat?2612:r.kredit*1.42),sub:'Peringkat 1 industri',chg:9.2,seed:1},
+    {lab:'Kredit Disalurkan',val:rp(r.kredit),sub:'Target YTD '+r.ach+'% tercapai',chg:12.4,seed:2},
+    {lab:'Dana Pihak Ketiga',val:rp(r.dpk),sub:'CASA 78,6%',chg:8.1,seed:3},
+    {lab:'Laba Bersih',val:'Rp '+fmt(laba,1)+' T',sub:'ROE 21,6% · EPS Rp 326',chg:7.6,seed:4},
+    {lab:'NIM',val:'4,85',small:'%',sub:'Cost of fund 2,64%',chg:-0.11,unit:' pp',inv:true,seed:5},
+    {lab:'NPL Gross',val:fmt(r.npl,2),small:'%',sub:'NPL net 0,31% · LAR 6,9%',chg:-0.08,unit:' pp',inv:true,seed:6},
+    {lab:'BOPO',val:'65,8',small:'%',sub:'Cost-to-income 36,4%',chg:-1.4,unit:' pp',inv:true,seed:7},
+    {lab:'CAR',val:'19,8',small:'%',sub:'Buffer 5,3 pp di atas minimum',chg:0.6,unit:' pp',seed:8},
+  ].map(kpiCard).join('');
+
+  const yrs=['2021','2022','2023','2024','2025','2026F'];
+  mk('cBalance',{data:{labels:yrs,datasets:[
+    {type:'bar',label:'Kredit',data:[1050,1200,1400,1670,1780,1815],backgroundColor:'rgba(253,185,19,.78)',borderRadius:5,order:3},
+    {type:'bar',label:'DPK',data:[1290,1380,1450,1700,1790,1812],backgroundColor:'rgba(38,169,224,.62)',borderRadius:5,order:2},
+    {type:'line',label:'Laba bersih (kanan)',data:[30.5,41.2,55.1,55.8,58.4,62.0],borderColor:C.green,backgroundColor:C.green,borderWidth:2.4,tension:.35,pointRadius:3.5,yAxisID:'y1',order:1}
+  ]},options:{interaction:{mode:'index',intersect:false},scales:{x:GRID,y:{...GRID,title:{display:true,text:'Rp T'}},y1:{position:'right',grid:{display:false},border:{display:false},title:{display:true,text:'Laba Rp T'}}}}});
+
+  mk('cRev',{type:'doughnut',data:{labels:['NII','Fee & komisi','Treasury & FX','Anak usaha','Lainnya'],datasets:[{data:[51.8,13.2,4.1,7.2,3.0],backgroundColor:[C.gold,C.sky,C.aqua,C.violet,C.ink3],borderColor:'#031B34',borderWidth:2,hoverOffset:8}]},options:{cutout:'62%',plugins:{legend:{position:'bottom'}}}});
+
+  mk('cPeer',{type:'radar',data:{labels:['ROE','NIM','Efisiensi (inv BOPO)','Kualitas aset','Digital MAU','CASA'],datasets:[
+    {label:'Bank Mandiri',data:[92,78,88,90,94,86],borderColor:C.gold,backgroundColor:'rgba(253,185,19,.18)',borderWidth:2,pointRadius:3},
+    {label:'Pesaing A',data:[96,72,94,96,88,98],borderColor:C.sky,backgroundColor:'rgba(38,169,224,.12)',borderWidth:2,pointRadius:3},
+    {label:'Pesaing B',data:[88,96,74,72,80,74],borderColor:C.violet,backgroundColor:'rgba(155,123,255,.10)',borderWidth:2,pointRadius:3}
+  ]},options:{scales:{r:{grid:{color:C.line},angleLines:{color:C.line},pointLabels:{color:C.ink2,font:{size:11,weight:'600'}},ticks:{display:false},min:50,max:100}},plugins:{legend:{position:'bottom'}}}});
+
+  const H=[['CAR','19,8%','min 12,0%',99,'p-ok'],['NPL gross',fmt(r.npl,2)+'%','maks 5,0%',20,'p-ok'],['LDR','100,1%','78–100%',96,'p-wr'],['LCR','172%','min 100%',86,'p-ok'],['NSFR','122%','min 100%',82,'p-ok'],['BOPO','65,8%','maks 85%',66,'p-ok'],['GWM rupiah','9,2%','min 9,0%',92,'p-wr'],['PDN','2,1%','maks 20%',11,'p-ok']];
+  $('#healthRows').innerHTML=H.map(h=>`<div class="stat"><span style="flex:1">${h[0]} <em style="color:var(--ink3);font-size:11px;font-style:normal">· ${h[2]}</em></span>
+    <div class="bar" style="width:110px;margin:0 12px"><i style="width:${h[3]}%"></i></div><b>${h[1]}</b> <span class="pill ${h[4]}" style="margin-left:10px">${h[4]==='p-ok'?'AMAN':'PANTAU'}</span></div>`).join('');
+}
+
+/* live ops cards */
+function renderOps(){
+  const t=state.tps[state.tps.length-1]||3200;
+  const cards=[
+    {lab:'Transaksi hari ini',val:(2.14e8+state.todayVal*1e4|0).toLocaleString('id-ID'),sub:'Livin + Kopra + ATM + EDC',chg:6.2,seed:2},
+    {lab:'Throughput saat ini',val:t.toLocaleString('id-ID'),small:'TPS',sub:'Kapasitas puncak 11.000 TPS',chg:null,seed:3},
+    {lab:'Uptime kanal digital',val:'99,96',small:'%',sub:'Tidak ada insiden P1 24 jam',chg:0.02,seed:4},
+    {lab:'Nilai transaksi hari ini',val:'Rp '+fmt(state.todayVal,1)+' T',sub:'Termasuk RTGS & kliring',chg:4.8,seed:5}
+  ];
+  $('#opsLive').innerHTML=cards.map(kpiCard).join('');
+}
+
+/* ============ 2. KREDIT ============ */
+function renderKredit(){
+  const r=R(),sc=r.kredit/1815;
+  $('#kpiKredit').innerHTML=[
+    {lab:'Total Kredit',val:rp(r.kredit),sub:'YoY +12,4% · industri +9,1%',chg:12.4,seed:1},
+    {lab:'NPL Gross',val:fmt(r.npl,2),small:'%',sub:'Terbaik di kelompok bank besar',chg:-0.08,unit:' pp',inv:true,seed:2},
+    {lab:'Loan at Risk',val:'6,9',small:'%',sub:'Turun dari 8,4% tahun lalu',chg:-1.5,unit:' pp',inv:true,seed:3},
+    {lab:'Cost of Credit',val:'0,85',small:'%',sub:'Panduan manajemen 0,8–1,0%',chg:-0.09,unit:' pp',inv:true,seed:4},
+  ].map(kpiCard).join('');
+
+  const qs=['Q3-24','Q4-24','Q1-25','Q2-25','Q3-25','Q4-25','Q1-26','Q2-26'];
+  mk('cSeg',{data:{labels:qs,datasets:SEGMENTS.map((s,i)=>({label:s.n,data:qs.map((_,q)=>+(s.v*sc*(.82+q*.026)).toFixed(1)),backgroundColor:s.c+'55',borderColor:s.c,fill:i===0?'origin':'-1',type:'line',tension:.35,pointRadius:0,borderWidth:1.5}))},options:{interaction:{mode:'index',intersect:false},scales:{x:GRID,y:{...GRID,stacked:true,title:{display:true,text:'Rp T'}}},plugins:{legend:{position:'bottom'}}}});
+
+  mk('cNpl',{type:'bar',data:{labels:SEGMENTS.map(s=>s.n),datasets:[
+    {label:'NPL %',data:SEGMENTS.map(s=>+(s.npl*(r.npl/1.02)).toFixed(2)),backgroundColor:C.red+'cc',borderRadius:5},
+    {label:'LAR %',data:SEGMENTS.map(s=>s.lar),backgroundColor:'rgba(255,159,67,.35)',borderRadius:5}
+  ]},options:{indexAxis:'y',scales:{x:{...GRID},y:{grid:{display:false},border:{display:false}}},plugins:{legend:{position:'bottom'}}}});
+
+  mk('cSector',{type:'bar',data:{labels:SECTORS.map(s=>s[0]),datasets:[{label:'Eksposur Rp T',data:SECTORS.map(s=>+(s[1]*sc).toFixed(1)),backgroundColor:(c)=>{const v=c.raw;return v>200*sc?C.gold:v>120*sc?C.sky:C.aqua},borderRadius:5}]},options:{indexAxis:'y',scales:{x:GRID,y:{grid:{display:false},border:{display:false}}},plugins:{legend:{display:false}}}});
+
+  $('#tWatch tbody').innerHTML=WATCH.map((w,i)=>`<tr data-i="${i}" style="cursor:pointer"><td><b>${w[0]}</b></td><td>${w[1]}</td><td class="num"><b>Rp ${fmt(w[2],1)} T</b></td><td class="num">${w[3]}</td><td><span class="pill ${w[5]}">${w[4]}</span></td></tr>`).join('');
+  $$('#tWatch tbody tr').forEach(tr=>tr.onclick=()=>{
+    const w=WATCH[tr.dataset.i];
+    openDrawer(w[0],`${w[1]} · Kolektibilitas ${w[3]} · ${w[4]}`,`
+      <div class="mini" style="margin-bottom:14px">
+        <div class="mbox"><div class="ml">Eksposur</div><div class="mv">Rp ${fmt(w[2],1)} T</div></div>
+        <div class="mbox"><div class="ml">Agunan</div><div class="mv">${fmt(rnd(60,140),0)}%</div></div>
+        <div class="mbox"><div class="ml">CKPN dibentuk</div><div class="mv">Rp ${fmt(w[2]*rnd(.05,.35),2)} T</div></div>
+        <div class="mbox"><div class="ml">DSCR</div><div class="mv">${fmt(rnd(.8,2.4),2)}x</div></div>
+      </div>
+      <div class="stat"><span>Fasilitas aktif</span><b>${Math.round(rnd(2,7))} fasilitas</b></div>
+      <div class="stat"><span>Tenor tersisa</span><b>${Math.round(rnd(8,72))} bulan</b></div>
+      <div class="stat"><span>Suku bunga</span><b>${fmt(rnd(7.5,12.5),2)}%</b></div>
+      <div class="stat"><span>Terakhir direview</span><b>${Math.round(rnd(1,90))} hari lalu</b></div>
+      <div class="stat"><span>Relationship manager</span><b>Wholesale Desk ${R().c}</b></div>
+      <p style="margin-top:14px;font-size:12px;color:var(--ink3);line-height:1.6">Tindakan yang disarankan: ${w[4]==='Lancar'?'pertahankan pemantauan rutin, peluang cross-sell trade finance.':w[4]==='Watchlist'?'perketat pemantauan arus kas bulanan dan minta laporan keuangan interim.':'eskalasi ke Special Asset Management, siapkan skenario restrukturisasi lanjutan.'}</p>`);
+  });
+
+  mk('cCoc',{data:{labels:qs,datasets:[{label:'Cost of credit %',data:[1.24,1.18,1.06,1.02,0.96,0.92,0.88,0.85],borderColor:C.gold,backgroundColor:'rgba(253,185,19,.14)',fill:true,tension:.35,borderWidth:2.4,pointRadius:3}]},options:{scales:{x:GRID,y:GRID},plugins:{legend:{display:false}}}});
+  mk('cCov',{data:{labels:qs,datasets:[{label:'Coverage %',data:[302,308,314,321,326,332,338,341],borderColor:C.green,backgroundColor:'rgba(59,201,126,.12)',fill:true,tension:.35,borderWidth:2.4,pointRadius:3}]},options:{scales:{x:GRID,y:{...GRID,min:280}},plugins:{legend:{display:false}}}});
+  mk('cRes',{type:'bar',data:{labels:qs,datasets:[
+    {label:'Restrukturisasi',data:[62,58,54,50,46,43,40,38].map(v=>+(v*sc).toFixed(1)),backgroundColor:C.orange+'aa',borderRadius:5,stack:'s'},
+    {label:'LAR lainnya',data:[86,82,80,77,75,72,70,68].map(v=>+(v*sc).toFixed(1)),backgroundColor:C.sky+'88',borderRadius:5,stack:'s'}
+  ]},options:{scales:{x:{...GRID,stacked:true},y:{...GRID,stacked:true}},plugins:{legend:{position:'bottom'}}}});
+}
+
+/* ============ 3. PENDANAAN ============ */
+function gauge(id,val,max,col,label){
+  mk(id,{type:'doughnut',data:{datasets:[{data:[val,Math.max(0,max-val)],backgroundColor:[col,'rgba(255,255,255,.06)'],borderWidth:0,circumference:220,rotation:250,cutout:'76%'}]},
+    options:{plugins:{legend:{display:false},tooltip:{enabled:false}}},
+    plugins:[{id:'txt',afterDraw(c){const{ctx,chartArea:a}=c;ctx.save();ctx.textAlign='center';
+      ctx.fillStyle=col;ctx.font='700 22px "Space Grotesk"';ctx.fillText(fmt(val,1)+'%',(a.left+a.right)/2,(a.top+a.bottom)/2+6);
+      ctx.fillStyle=C.ink3;ctx.font='700 10px Manrope';ctx.fillText(label,(a.left+a.right)/2,(a.top+a.bottom)/2+26);ctx.restore()}}]});
+}
+function renderPendanaan(){
+  const r=R();
+  $('#kpiFund').innerHTML=[
+    {lab:'Dana Pihak Ketiga',val:rp(r.dpk),sub:'Pangsa pasar 15,4%',chg:8.1,seed:1},
+    {lab:'CASA',val:'78,6',small:'%',sub:'Giro Rp 720 T · Tabungan Rp 704 T',chg:1.8,unit:' pp',seed:2},
+    {lab:'Cost of Fund',val:'2,64',small:'%',sub:'Terendah di kelompok bank besar',chg:-0.18,unit:' pp',inv:true,seed:3},
+    {lab:'Likuiditas Berlebih',val:'Rp 268 T',sub:'Ditempatkan di SBN & BI',chg:-3.2,seed:4},
+  ].map(kpiCard).join('');
+
+  const qs=['Q3-24','Q4-24','Q1-25','Q2-25','Q3-25','Q4-25','Q1-26','Q2-26'];
+  const sc=r.dpk/1812;
+  mk('cDpk',{type:'bar',data:{labels:qs,datasets:[
+    {label:'Giro',data:[640,668,682,694,706,712,718,720].map(v=>+(v*sc).toFixed(0)),backgroundColor:C.gold+'cc',borderRadius:4,stack:'a'},
+    {label:'Tabungan',data:[598,612,634,648,662,680,694,704].map(v=>+(v*sc).toFixed(0)),backgroundColor:C.sky+'cc',borderRadius:4,stack:'a'},
+    {label:'Deposito',data:[402,398,392,388,386,384,382,388].map(v=>+(v*sc).toFixed(0)),backgroundColor:'rgba(157,182,214,.45)',borderRadius:4,stack:'a'}
+  ]},options:{interaction:{mode:'index',intersect:false},scales:{x:{...GRID,stacked:true},y:{...GRID,stacked:true,title:{display:true,text:'Rp T'}}},plugins:{legend:{position:'bottom'}}}});
+
+  mk('cCof',{data:{labels:qs,datasets:[
+    {label:'Cost of fund',data:[3.12,3.06,2.98,2.90,2.84,2.76,2.70,2.64],borderColor:C.gold,backgroundColor:'rgba(253,185,19,.12)',fill:true,tension:.35,borderWidth:2.4,pointRadius:3},
+    {label:'BI-Rate',data:[6.25,6.00,5.75,5.50,5.25,5.00,4.75,4.75],borderColor:C.sky,borderDash:[5,4],tension:.2,borderWidth:2,pointRadius:0},
+    {label:'Yield kredit',data:[8.42,8.36,8.28,8.20,8.14,8.06,8.00,7.94],borderColor:C.green,tension:.35,borderWidth:2,pointRadius:0}
+  ]},options:{interaction:{mode:'index',intersect:false},scales:{x:GRID,y:GRID},plugins:{legend:{position:'bottom'}}}});
+
+  gauge('gLdr',100.1,130,C.orange,'Batas 100%');
+  gauge('gLcr',172,220,C.green,'Min 100%');
+  gauge('gNsfr',122,160,C.sky,'Min 100%');
+  gauge('gCasa',78.6,100,C.gold,'Target 80%');
+
+  mk('cConc',{type:'doughnut',data:{labels:['25 deposan inti','Korporasi lain','Ritel & UMKM','Pemerintah & BUMN'],datasets:[{data:[18.2,26.4,38.1,17.3],backgroundColor:[C.red,C.orange,C.green,C.sky],borderColor:'#031B34',borderWidth:2,hoverOffset:8}]},options:{cutout:'58%',plugins:{legend:{position:'bottom'}}}});
+
+  mk('cMat',{type:'bar',data:{labels:['≤1 bln','1–3 bln','3–6 bln','6–12 bln','1–3 thn','>3 thn'],datasets:[
+    {label:'Arus masuk',data:[412,286,214,188,244,168],backgroundColor:C.green+'aa',borderRadius:5},
+    {label:'Arus keluar',data:[-386,-262,-198,-172,-206,-142],backgroundColor:C.red+'aa',borderRadius:5}
+  ]},options:{scales:{x:{...GRID,stacked:true},y:{...GRID,stacked:true}},plugins:{legend:{position:'bottom'}}}});
+}
+
+/* ============ 4. PROFITABILITAS ============ */
+function renderProfit(){
+  const f=pf();
+  $('#kpiProfit').innerHTML=[
+    {lab:'Laba Bersih',val:'Rp '+fmt(30.4*f,1)+' T',sub:'Konsolidasi setelah pajak',chg:7.6,seed:1},
+    {lab:'ROE',val:'21,6',small:'%',sub:'Tier-1 · di atas rata-rata industri',chg:0.4,unit:' pp',seed:2},
+    {lab:'ROA',val:'2,54',small:'%',sub:'Sebelum pajak',chg:0.08,unit:' pp',seed:3},
+    {lab:'Cost-to-Income',val:'36,4',small:'%',sub:'BOPO 65,8% · target < 38%',chg:-1.1,unit:' pp',inv:true,seed:4},
+  ].map(kpiCard).join('');
+
+  const wf=[
+    ['Pendapatan bunga',[0,78.6],C.sky],
+    ['Beban bunga',[78.6,51.8],C.red],
+    ['Fee & komisi',[51.8,65.0],C.gold],
+    ['Treasury & FX',[65.0,69.1],C.gold],
+    ['Beban operasional',[69.1,42.4],C.red],
+    ['CKPN',[42.4,35.9],C.red],
+    ['Pajak',[35.9,30.4],C.red],
+    ['Laba bersih',[0,30.4],C.green]
+  ];
+  mk('cWaterfall',{type:'bar',data:{labels:wf.map(w=>w[0]),datasets:[{data:wf.map(w=>[w[1][0]*f,w[1][1]*f]),backgroundColor:wf.map(w=>w[2]+'cc'),borderRadius:5,borderSkipped:false}]},
+    options:{scales:{x:{...GRID,ticks:{maxRotation:40,minRotation:40,font:{size:10}}},y:{...GRID,title:{display:true,text:'Rp T'}}},plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>{const[a,b]=c.raw;return (b>a?'+ ':'− ')+'Rp '+fmt(Math.abs(b-a),1)+' T → posisi Rp '+fmt(b,1)+' T'}}}}}});
+
+  const qs=['Q3-24','Q4-24','Q1-25','Q2-25','Q3-25','Q4-25','Q1-26','Q2-26'];
+  mk('cNim',{data:{labels:qs,datasets:[
+    {label:'NIM %',data:[5.12,5.04,4.98,4.94,4.92,4.90,4.88,4.85],borderColor:C.gold,backgroundColor:'rgba(253,185,19,.14)',fill:true,tension:.35,borderWidth:2.6,pointRadius:3},
+    {label:'BOPO % (kanan)',data:[68.4,68.0,67.6,67.2,66.8,66.4,66.1,65.8],borderColor:C.violet,tension:.35,borderWidth:2,pointRadius:3,yAxisID:'y1'}
+  ]},options:{interaction:{mode:'index',intersect:false},scales:{x:GRID,y:{...GRID,min:4.4},y1:{position:'right',grid:{display:false},border:{display:false},min:60}},plugins:{legend:{position:'bottom'}}}});
+
+  mk('cFee',{type:'bar',data:{labels:['Kartu & merchant','Trade & remitansi','Bancassurance','Wealth & sekuritas','Administrasi','FX & derivatif','Digital & QRIS'],datasets:[
+    {label:'2025',data:[3.8,3.2,2.4,2.1,3.6,2.8,1.4],backgroundColor:'rgba(157,182,214,.35)',borderRadius:5},
+    {label:'2026 YTD',data:[4.2,3.6,2.6,2.5,3.8,3.0,2.1].map(v=>+(v*pf()*1.9).toFixed(1)),backgroundColor:C.gold+'cc',borderRadius:5}
+  ]},options:{scales:{x:{...GRID,ticks:{font:{size:10}}},y:{...GRID,title:{display:true,text:'Rp T'}}},plugins:{legend:{position:'bottom'}}}});
+
+  $('#tSubs tbody').innerHTML=SUBS.map(s=>`<tr>
+    <td><b>${s[0]}</b></td><td>${s[1]}</td>
+    <td class="num"><b>${s[2].toLocaleString('id-ID')}</b></td>
+    <td class="num"><span class="chg ${s[3]>0?'up':'dn'}">${s[3]>0?'+':''}${fmt(s[3],1)}%</span></td>
+    <td><div class="bar" style="width:70px"><i style="width:${s[4]}%"></i></div></td></tr>`).join('');
+}
+
+/* ============ 5. DIGITAL ============ */
+function renderDigital(){
+  $('#kpiDigital').innerHTML=[
+    {lab:"Pengguna Livin'",val:'33,4',small:'juta',sub:'MAU 22,1 juta · DAU 9,6 juta',chg:14.2,seed:1},
+    {lab:'Transaksi Livin YTD',val:'2,38',small:'miliar',sub:'Nilai Rp 2.140 T',chg:21.6,seed:2},
+    {lab:'Kopra — Nilai Transaksi',val:'Rp 12,4',small:'ribu T',sub:'86% transaksi wholesale via Kopra',chg:16.8,seed:3},
+    {lab:'Rasio Transaksi Digital',val:'98,2',small:'%',sub:'Cabang tinggal 1,8% volume',chg:0.9,unit:' pp',seed:4},
+  ].map(kpiCard).join('');
+
+  mk('cTps',{data:{labels:state.tps.map((_,i)=>i),datasets:[{label:'TPS',data:state.tps,borderColor:C.gold,backgroundColor:'rgba(253,185,19,.14)',fill:true,tension:.35,pointRadius:0,borderWidth:2}]},
+    options:{animation:false,scales:{x:{display:false},y:{...GRID,min:1800,max:6200,title:{display:true,text:'transaksi/detik'}}},plugins:{legend:{display:false}}}});
+
+  $('#slaRows').innerHTML=SLA.map(s=>{
+    const ok=s[2]>=99.95?'p-ok':s[2]>=99.9?'p-wr':'p-cr';
+    return `<div class="stat"><div style="flex:1"><b style="color:var(--ink)">${s[0]}</b><div style="font-size:10.5px;color:var(--ink3)">${s[1]}</div></div>
+      <div style="text-align:right;margin-right:12px"><b>${fmt(s[2],2)}%</b><div style="font-size:10px;color:var(--ink3)" class="mono">${s[3]} ms · err ${fmt(s[4],2)}%</div></div>
+      <span class="pill ${ok}">${ok==='p-ok'?'SEHAT':ok==='p-wr'?'PANTAU':'DEGRADASI'}</span></div>`;
+  }).join('');
+
+  const yrs=['2022','2023','2024','2025','2026F'];
+  mk('cLivin',{data:{labels:yrs,datasets:[
+    {label:'Terdaftar',data:[12.2,18.4,25.6,30.8,33.4],borderColor:C.gold,backgroundColor:'rgba(253,185,19,.16)',fill:true,tension:.35,borderWidth:2.4,pointRadius:3},
+    {label:'MAU',data:[7.1,11.8,16.4,19.8,22.1],borderColor:C.sky,backgroundColor:'rgba(38,169,224,.14)',fill:true,tension:.35,borderWidth:2.4,pointRadius:3}
+  ]},options:{scales:{x:GRID,y:{...GRID,title:{display:true,text:'juta'}}},plugins:{legend:{position:'bottom'}}}});
+
+  mk('cChan',{type:'doughnut',data:{labels:["Livin'",'Kopra','ATM','EDC/QRIS','Cabang'],datasets:[{data:[54,22,11,11,2],backgroundColor:[C.gold,C.sky,C.aqua,C.violet,C.ink3],borderColor:'#031B34',borderWidth:2,hoverOffset:8}]},options:{cutout:'60%',plugins:{legend:{position:'bottom'}}}});
+
+  mk('cFeat',{type:'bar',data:{labels:['Transfer','QRIS','Top-up e-wallet','Bayar tagihan','Investasi','Kartu kredit','Pinjaman'],datasets:[{data:[34,24,14,12,8,5,3],backgroundColor:[C.gold,C.sky,C.aqua,C.green,C.violet,C.orange,C.ink3],borderRadius:5}]},options:{indexAxis:'y',scales:{x:{...GRID,title:{display:true,text:'% volume'}},y:{grid:{display:false},border:{display:false},ticks:{font:{size:10}}}},plugins:{legend:{display:false}}}});
+
+  mk('cKopra',{type:'bar',data:{labels:['2022','2023','2024','2025','2026 YTD'],datasets:[
+    {label:'Nilai transaksi',data:[16.2,18.4,20.8,23.6,12.4],backgroundColor:C.sky+'cc',borderRadius:6},
+    {label:'Nasabah aktif (ribu, kanan)',type:'line',data:[92,118,146,178,196],borderColor:C.gold,borderWidth:2.4,tension:.35,pointRadius:3.5,yAxisID:'y1'}
+  ]},options:{interaction:{mode:'index',intersect:false},scales:{x:GRID,y:{...GRID,title:{display:true,text:'Rp ribu T'}},y1:{position:'right',grid:{display:false},border:{display:false}}},plugins:{legend:{position:'bottom'}}}});
+}
+
+/* ============ 6. JARINGAN ============ */
+function renderJaringan(){
+  const rs=REGIONS.filter(r=>r.id!=='ALL');
+  $('#kpiNet').innerHTML=[
+    {lab:'Kantor Cabang',val:'2.386',sub:'Turun 4,2% — pergeseran ke digital',chg:-4.2,inv:true,seed:1},
+    {lab:'ATM & CRM',val:'12.740',sub:'Uptime 99,3% · isi ulang otomatis',chg:-2.1,inv:true,seed:2},
+    {lab:'Agen Mandiri',val:'412.000',sub:'Menjangkau 4.860 kecamatan',chg:18.4,seed:3},
+    {lab:'Mesin EDC & QRIS',val:'265.400',sub:'Merchant aktif 1,84 juta',chg:11.2,seed:4},
+  ].map(kpiCard).join('');
+
+  $('#regionGrid').innerHTML=rs.map(r=>`<button class="rgn ${state.region===r.id?'on':''}" data-r="${r.id}">
+    <div class="rn"><span>${r.c}</span><span class="hd" style="background:${hcol(r.ach)}"></span></div>
+    <div class="rc">${r.n.split('—')[1].trim()}</div>
+    <div class="rv">${rp(r.kredit)}</div>
+    <div class="rs"><span>Target ${r.ach}%</span><span>NPL ${fmt(r.npl,2)}%</span></div>
+    <div class="bar" style="margin-top:8px"><i style="width:${Math.min(100,r.ach)}%;background:${hcol(r.ach)}"></i></div>
+  </button>`).join('');
+
+  $$('.rgn').forEach(b=>b.onclick=()=>{
+    const r=REGIONS.find(x=>x.id===b.dataset.r);
+    openDrawer(r.n,`Kode ${r.c} · pencapaian target ${r.ach}%`,`
+      <div class="mini" style="margin-bottom:14px">
+        <div class="mbox"><div class="ml">Kredit</div><div class="mv">${rp(r.kredit)}</div></div>
+        <div class="mbox"><div class="ml">DPK</div><div class="mv">${rp(r.dpk)}</div></div>
+        <div class="mbox"><div class="ml">LDR</div><div class="mv">${fmt(r.kredit/r.dpk*100,1)}%</div></div>
+        <div class="mbox"><div class="ml">NPL</div><div class="mv" style="color:${r.npl>1.4?'var(--red)':'var(--green)'}">${fmt(r.npl,2)}%</div></div>
+      </div>
+      <div class="stat"><span>Kantor cabang</span><b>${r.cab}</b></div>
+      <div class="stat"><span>ATM & CRM</span><b>${r.atm.toLocaleString('id-ID')}</b></div>
+      <div class="stat"><span>Agen Mandiri</span><b>${r.agen.toLocaleString('id-ID')}</b></div>
+      <div class="stat"><span>Kontribusi kredit nasional</span><b>${fmt(r.kredit/1815*100,1)}%</b></div>
+      <div class="stat"><span>Laba kontribusi (estimasi)</span><b>Rp ${fmt(30.4*(r.kredit/1815),2)} T</b></div>
+      <p style="margin-top:14px;font-size:12px;color:var(--ink3);line-height:1.6">${r.ach>=100?'Region melampaui target. Fokus berikutnya: jaga kualitas aset saat portofolio tumbuh dan dorong CASA lewat payroll korporasi.':r.ach>=90?'Sedikit di bawah target. Percepat pipeline komersial dan aktivasi agen di kabupaten dengan penetrasi rendah.':'Di bawah target dan NPL di atas rata-rata nasional. Bekukan ekspansi kredit segmen berisiko, prioritaskan penagihan dan restrukturisasi.'}</p>
+      <button class="btn" style="margin-top:14px;width:100%" onclick="document.getElementById('selRegion').value='${r.id}';document.getElementById('selRegion').dispatchEvent(new Event('change'));closeDrawer()">Terapkan filter region ini</button>`);
+  });
+
+  mk('cRegion',{type:'bar',data:{labels:rs.map(r=>r.c),datasets:[
+    {label:'Kredit',data:rs.map(r=>r.kredit),backgroundColor:C.gold+'cc',borderRadius:5},
+    {label:'DPK',data:rs.map(r=>r.dpk),backgroundColor:C.sky+'aa',borderRadius:5},
+    {label:'NPL % (kanan)',type:'line',data:rs.map(r=>r.npl),borderColor:C.red,borderWidth:2,pointRadius:3,tension:.3,yAxisID:'y1'}
+  ]},options:{interaction:{mode:'index',intersect:false},scales:{x:GRID,y:{...GRID,title:{display:true,text:'Rp T'}},y1:{position:'right',grid:{display:false},border:{display:false},min:0,max:2.5}},plugins:{legend:{position:'bottom'}}}});
+
+  mk('cTouch',{type:'bar',data:{labels:rs.map(r=>r.c),datasets:[
+    {label:'Cabang',data:rs.map(r=>r.cab),backgroundColor:C.violet+'cc',borderRadius:4,stack:'a'},
+    {label:'ATM',data:rs.map(r=>r.atm/2),backgroundColor:C.aqua+'aa',borderRadius:4,stack:'a'},
+    {label:'Agen (÷100)',data:rs.map(r=>r.agen/100),backgroundColor:C.gold+'88',borderRadius:4,stack:'a'}
+  ]},options:{scales:{x:{...GRID,stacked:true},y:{...GRID,stacked:true}},plugins:{legend:{position:'bottom'},tooltip:{callbacks:{label:c=>c.dataset.label+': '+fmt(c.raw,0)}}}}});
+}
+
+/* ============ 7. TREASURY ============ */
+const FX=[['USD/IDR',16420,4],['EUR/IDR',17840,4],['SGD/IDR',12180,4],['JPY/IDR',108.4,2],['CNY/IDR',2264,3],['AUD/IDR',10720,3],['BI-Rate',4.75,0],['JIBOR 3M',5.12,0],['SBN 10Y',6.42,0],['BMRI (IDX)',6425,5]];
+function renderTreasury(){
+  $('#kpiTre').innerHTML=[
+    {lab:'Harga Saham BMRI',val:state.px.toLocaleString('id-ID'),sub:'Kapitalisasi Rp 599 T',chg:1.4,seed:1},
+    {lab:'Portofolio Surat Berharga',val:'Rp 486 T',sub:'82% SBN · durasi 4,2 tahun',chg:6.4,seed:2},
+    {lab:'Laba Treasury YTD',val:'Rp 4,1 T',sub:'FX, obligasi, derivatif',chg:12.8,seed:3},
+    {lab:'Posisi Devisa Neto',val:'2,1',small:'%',sub:'Batas regulator 20%',chg:null,seed:4},
+  ].map(kpiCard).join('');
+
+  if(!state.stock.length){let p=6380;for(let i=0;i<80;i++){p+=rnd(-14,15);state.stock.push(+p.toFixed(0))}}
+  mk('cStock',{data:{labels:state.stock.map((_,i)=>i),datasets:[{label:'BMRI',data:state.stock,borderColor:C.gold,backgroundColor:'rgba(253,185,19,.13)',fill:true,tension:.3,pointRadius:0,borderWidth:2}]},
+    options:{animation:false,scales:{x:{display:false},y:{...GRID,position:'right'}},plugins:{legend:{display:false}}}});
+
+  drawFx();
+
+  mk('cYield',{data:{labels:['1Y','2Y','3Y','5Y','7Y','10Y','15Y','20Y','30Y'],datasets:[
+    {label:'Kurva hari ini',data:[5.42,5.68,5.86,6.08,6.26,6.42,6.64,6.78,6.92],borderColor:C.gold,tension:.35,borderWidth:2.4,pointRadius:3},
+    {label:'Sebulan lalu',data:[5.58,5.82,6.02,6.22,6.40,6.56,6.76,6.90,7.02],borderColor:C.ink3,borderDash:[5,4],tension:.35,borderWidth:1.8,pointRadius:0}
+  ]},options:{scales:{x:GRID,y:{...GRID,title:{display:true,text:'%'}}},plugins:{legend:{position:'bottom'}}}});
+
+  mk('cSec',{type:'doughnut',data:{labels:['SBN (HTM)','SBN (AFS)','SBI & SDBI','Obligasi korporasi','Sukuk'],datasets:[{data:[248,152,42,28,16],backgroundColor:[C.gold,C.gold2,C.sky,C.violet,C.aqua],borderColor:'#031B34',borderWidth:2,hoverOffset:8}]},options:{cutout:'58%',plugins:{legend:{position:'bottom'}}}});
+
+  mk('cSens',{type:'bar',data:{labels:['-100 bps','-50 bps','Dasar','+50 bps','+100 bps'],datasets:[{label:'Δ NII 12 bulan',data:[-3.2,-1.6,0,1.5,2.9],backgroundColor:c=>c.raw<0?C.red+'cc':c.raw>0?C.green+'cc':C.ink3,borderRadius:5}]},options:{scales:{x:GRID,y:{...GRID,title:{display:true,text:'Rp T'}}},plugins:{legend:{display:false}}}});
+}
+function drawFx(){
+  const b=$('#fxBoard'); if(!b) return;
+  b.innerHTML=`<table><thead><tr><th>Instrumen</th><th class="num">Harga</th><th class="num">Δ</th></tr></thead><tbody>${
+    FX.map(f=>{const d=rnd(-.45,.5);const cls=d>0?'up':'dn';
+      return `<tr><td><b>${f[0]}</b></td><td class="num">${fmt(f[1],f[2]>3?0:2)}</td><td class="num"><span class="chg ${cls}">${d>0?'+':''}${fmt(d,2)}%</span></td></tr>`}).join('')}</tbody></table>`;
+}
+
+/* ============ 8. RISIKO ============ */
+function renderRisiko(){
+  $('#kpiRisk').innerHTML=[
+    {lab:'Kerugian Fraud YTD',val:'Rp 38,4 M',sub:'0,0013% dari volume transaksi',chg:-22.4,inv:true,seed:1},
+    {lab:'Upaya Diblokir (24 jam)',val:'12.486',sub:'Nilai diselamatkan Rp 84,2 M',chg:8.6,seed:2},
+    {lab:'Kasus AML Terbuka',val:'214',sub:'STR ke PPATK: 38 bulan ini',chg:-6.2,inv:true,seed:3},
+    {lab:'Skor Kepatuhan',val:'94,2',small:'/100',sub:'Tidak ada temuan material OJK',chg:1.8,seed:4},
+  ].map(kpiCard).join('');
+
+  renderFraudFeed(true);
+
+  mk('cRisk',{type:'bubble',data:{datasets:[
+    {label:'Kritis',data:[{x:4.2,y:4.6,r:18},{x:3.6,y:4.2,r:13}],backgroundColor:'rgba(255,92,108,.55)'},
+    {label:'Tinggi',data:[{x:3.2,y:3.4,r:15},{x:2.6,y:3.8,r:11},{x:3.8,y:2.8,r:12}],backgroundColor:'rgba(255,159,67,.5)'},
+    {label:'Sedang',data:[{x:2.4,y:2.4,r:14},{x:1.8,y:2.8,r:10},{x:2.8,y:1.8,r:11}],backgroundColor:'rgba(253,185,19,.45)'},
+    {label:'Rendah',data:[{x:1.4,y:1.4,r:12},{x:1.2,y:2.0,r:9},{x:2.0,y:1.2,r:10}],backgroundColor:'rgba(59,201,126,.42)'}
+  ]},options:{scales:{
+    x:{...GRID,min:0,max:5,title:{display:true,text:'Frekuensi →'}},
+    y:{...GRID,min:0,max:5,title:{display:true,text:'Dampak →'}}},
+    plugins:{legend:{position:'bottom'},tooltip:{callbacks:{label:c=>`${c.dataset.label} · frekuensi ${c.raw.x} · dampak ${c.raw.y}`}}}}});
+
+  mk('cAml',{type:'bar',data:{labels:['Alert sistem','Lolos triase','Investigasi','Eskalasi','STR ke PPATK'],datasets:[{data:[18420,4260,982,214,38],backgroundColor:[C.sky,C.aqua,C.gold,C.orange,C.red],borderRadius:5}]},options:{indexAxis:'y',scales:{x:{...GRID,type:'logarithmic'},y:{grid:{display:false},border:{display:false}}},plugins:{legend:{display:false}}}});
+
+  mk('cFraudCh',{type:'doughnut',data:{labels:['Rekayasa sosial','Skimming kartu','Phishing','Pengambilalihan akun','Fraud internal'],datasets:[{data:[42,18,22,14,4],backgroundColor:[C.red,C.orange,C.gold,C.violet,C.ink3],borderColor:'#031B34',borderWidth:2,hoverOffset:8}]},options:{cutout:'58%',plugins:{legend:{position:'bottom'}}}});
+
+  mk('cComp',{type:'radar',data:{labels:['APU-PPT','Perlindungan data','Modal (Basel)','Perlindungan konsumen','Keamanan siber','Pelaporan OJK'],datasets:[{label:'Skor',data:[95,92,98,90,94,96],borderColor:C.gold,backgroundColor:'rgba(253,185,19,.18)',borderWidth:2,pointRadius:3}]},
+    options:{scales:{r:{grid:{color:C.line},angleLines:{color:C.line},pointLabels:{color:C.ink2,font:{size:10,weight:'600'}},ticks:{display:false},min:70,max:100}},plugins:{legend:{display:false}}}});
+}
+let fi=0;
+function renderFraudFeed(init){
+  const el=$('#fraudFeed'); if(!el) return;
+  if(init) el.innerHTML='';
+  const [t,d,s]=FRAUD[fi++%FRAUD.length];
+  const now=new Date();const p=n=>String(n).padStart(2,'0');
+  const div=document.createElement('div');div.className='fi '+s;
+  div.innerHTML=`<div class="fx"><div class="ft">${t}</div><div class="fd">${d}</div></div><div class="fm">${p(now.getHours())}:${p(now.getMinutes())}:${p(now.getSeconds())}</div>`;
+  el.prepend(div);
+  while(el.children.length>9) el.lastChild.remove();
+  if(init){for(let i=0;i<5;i++) renderFraudFeed(false)}
+}
+
+/* ============ LIVE LOOPS ============ */
+setInterval(()=>{ if(curPage==='ringkasan') renderOps() },2500);
+setInterval(()=>{ if(curPage==='risiko') renderFraudFeed(false) },5200);
+setInterval(()=>{                     /* stock + fx tick */
+  state.px=Math.max(5800,state.px+rnd(-16,17));
+  state.stock.push(+state.px.toFixed(0)); if(state.stock.length>80) state.stock.shift();
+  if(charts.cStock && curPage==='treasury'){
+    charts.cStock.data.labels=state.stock.map((_,i)=>i);
+    charts.cStock.data.datasets[0].data=state.stock;charts.cStock.update('none');
+    drawFx();
+  }
+},3000);
+
+/* ============ BOOT ============ */
+const PAGES={
+  ringkasan:()=>{renderRingkasan();renderOps()},
+  kredit:renderKredit, pendanaan:renderPendanaan, profit:renderProfit,
+  digital:renderDigital, jaringan:renderJaringan, treasury:renderTreasury, risiko:renderRisiko
+};
+let curPage='ringkasan';
+function fixSize(){                       // canvas di tab tersembunyi lahir 0px -> paksa resize saat tampil
+  requestAnimationFrame(()=>{
+    Object.values(charts).forEach(c=>{ try{ c.resize() }catch(e){} });
+    drawPulse();
+  });
+}
+function renderPage(k){
+  curPage=k;
+  PAGES[k]();
+  fixSize();
+}
+function renderAll(){ renderPage(curPage) }
+renderPage('ringkasan');
+addEventListener('resize',fixSize);
+</script>
+</body>
+</html>
